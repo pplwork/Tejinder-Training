@@ -1,0 +1,23 @@
+.heading {
+
+    &__primary {
+        font-size: 5rem;
+        color:$color-primary;
+        display: inline-block;
+    }
+
+    &__hover {
+        font-size: 5rem;
+        color:$color-secondary;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: transform .2s;
+        z-index:-1;
+    }
+
+    &__primary:hover + &__hover {
+        transform: translate(-49%, -44%)
+    }
+}

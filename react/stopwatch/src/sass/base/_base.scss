@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    color: $color-white;
 }
 
 html {
@@ -12,4 +13,5 @@ html {
 
 body{
     box-sizing: border-box;
+    background-color: $color-black;
 }

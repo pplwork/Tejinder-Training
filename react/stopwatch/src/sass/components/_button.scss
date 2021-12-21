@@ -4,3 +4,52 @@
     margin: 1rem;
     padding: 1rem 3rem ;
 }
+
+.btn {
+    display: inline-block;
+    margin: 1rem;
+    border: none;
+    padding: 1.5rem 4rem ;
+    cursor: pointer;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    font-size: 2rem;
+    border-radius: 8px;
+    transition: all .3s;
+    
+    &__block {
+        text-align: center;
+        width: 100%;
+    }
+    &__block > * {
+        display: none;
+        visibility: hidden;
+        // width: 0;
+        opacity: 0;
+    }
+
+    &__block-0 > &--start {
+        display: inline-block;
+        visibility: visible;
+        // width: 100%;
+        opacity: 1;
+    }
+
+    &__block-1 > &--lap,&__block-1 >&--pause{
+        display: inline-block;
+        // width: 100%;
+        visibility: visible;
+
+        opacity: 1;
+
+    }
+
+    &__block-2 > &--reset,&__block-2 > &--resume {
+        display: inline-block;
+        // width: 100%;
+        visibility: visible;
+
+        opacity: 1;
+
+    }
+}
