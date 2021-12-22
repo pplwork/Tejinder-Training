@@ -1,0 +1,54 @@
+.lap {
+
+    &__container{
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 2s;
+        margin: 0 auto;
+        width: 50rem;
+        background-color: $color-white;
+        border-radius: 8px;
+        transition: all .2s;
+
+        &--empty{
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__table {
+        width: 100%;
+        padding:2rem ;
+        padding-bottom: 2.5rem;
+    }
+
+    &__table--head {
+        color: $color-grey-dark-2;
+        font-size: 2rem;
+        border-bottom: 1px solid rgba($color-grey-light-1, $alpha: .6);
+        font-weight: 300;
+        padding: .5rem;
+    }
+    
+    &__text {
+        color: inherit;
+        font-size: $font-default;
+        border-bottom: 1px solid rgba($color-grey-light-1, $alpha: .6);
+        font-weight: 300;
+        text-align: center;
+    }
+
+    &{
+        height: 3rem;
+        color: $color-grey-dark-1;
+
+    }
+
+    &__difference {
+        font-weight: 700;
+    }
+
+    &__last {
+        color: $color-primary-light;
+    }
+}

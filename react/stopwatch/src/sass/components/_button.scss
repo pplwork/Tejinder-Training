@@ -16,10 +16,17 @@
     font-size: 2rem;
     border-radius: 8px;
     transition: all .3s;
+
+    &:link,
+    &:visited{
+        color: $color-white;
+        text-decoration: none;
+    }
     
     &__block {
         text-align: center;
         width: 100%;
+        padding:1rem ;
     }
     &__block > * {
         display: none;

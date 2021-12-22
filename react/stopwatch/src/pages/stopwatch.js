@@ -2,14 +2,19 @@ import Header from '../components/header'
 import Clock from '../components/clock'
 import ButtonBlock from '../components/button/buttonBlock';
 import { useState } from 'react'
+import LapBlock from '../components/lapBlock/lapBlock';
+
+
+
 
 function Stopwatch() {
-    const [time, setTime] = useState({ ms: 0, s: 0, m: 0, h: 0 });
+    const [time, setTime] = useState(0);
     const [laps, setLaps] = useState([])
+    const [lastLap, setLastLap] = useState(0)
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
 
-    let ms = time.ms, s = time.s, m = time.m, h = time.h;
+    // let ms = time.ms, s = time.s, m = time.m, h = time.h;
 
     const start = () => {
         run();
@@ -18,20 +23,7 @@ function Stopwatch() {
     };
 
     const run = () => {
-        if (m === 60) {
-            h++;
-            m = 0;
-        }
-        if (s === 60) {
-            m++;
-            s = 0;
-        }
-        if (ms === 100) {
-            s++;
-            ms = 0;
-        }
-        ms++;
-        return setTime({ ms, s, m, h });
+        setTime(t => t + 1)
     };
 
     const stop = () => {
@@ -40,33 +32,40 @@ function Stopwatch() {
     };
 
     const addLap = () => {
+        let count = laps.length
+        setLastLap(count)
         setLaps(l => [...l, time])
     }
 
     const reset = () => {
         clearInterval(interv);
         setStatus(0);
-        setTime({ ms: 0, s: 0, m: 0, h: 0 })
+        setTime(0)
         setLaps([])
+        setLastLap(0)
     };
+    // console.log(time)
 
     const resume = () => start();
 
     return (
-        <main className="main">
+        <>
             <Header>Stopwatch</Header>
-            <Clock />
-            <div className='lap__container'>
-                LAPS
-            </div>
-            <ButtonBlock type={status}
-                start={start}
-                reset={reset}
-                resume={resume}
-                stop={stop}
-                addLap={addLap} />
-        </main>
-    )
+            <main className="main">
+                <div className="clock__container u-mb-m">
+                    <Clock time={time} />
+                    <ButtonBlock type={status}
+                        start={start}
+                        reset={reset}
+                        resume={resume}
+                        stop={stop}
+                        addLap={addLap} />
+                </div>
+                <div className={`lap__container${laps.length === 0 ? '--empty' : ""}`}>
+                    <LapBlock lastLap={lastLap} laps={laps} />
+                </div>
+            </main>
+        </>)
 }
 
 export default Stopwatch
