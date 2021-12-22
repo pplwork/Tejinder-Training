@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    color: $color-white;
+}
+
+html {
+    font-size: 62.5%; 
+
+    @include respond(phone) {
+        font-size: 40%;
+    }
+}
+
+body{
+    box-sizing: border-box;
+    background-color: $color-black;
+}
