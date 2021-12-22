@@ -3,10 +3,17 @@
     padding: 10rem 0;
     font-size: 1.4rem;
 
+    @include respond(tab-port) {
+        padding: 8rem 0;
+    }
 
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
+
+        @include respond(tab-port) {
+            margin-bottom: 4rem;
+        }
     }
 
     &__logo {
@@ -19,6 +26,11 @@
         padding-top: 2rem;
         border-top: 1px solid $color-grey-dark;
         display: inline-block;
+
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     
@@ -30,6 +42,10 @@
         display: inline-block;
         &:not(:last-child){
             margin-right: 1.5rem;
+        }
+
+        @include respond(tab-port) {
+            font-size: 1.3rem;
         }
     }
 
@@ -57,5 +73,11 @@
         border-top: 1px solid $color-grey-dark;
         width: 80%;
         float: right;
+
+        @include respond(tab-port) {
+            width: 100%;
+            float: none;
+            text-align: center;
+        }
     }
 }

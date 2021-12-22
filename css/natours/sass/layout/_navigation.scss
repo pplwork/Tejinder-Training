@@ -17,6 +17,16 @@
         cursor: pointer;
         text-align: center;
         box-shadow: 0 1rem 4rem rgba($color-black, $alpha: .2);
+
+        @include respond(tab-port){
+            top: 4rem;
+            right: 4rem;
+        }
+
+        @include respond(phone){
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     &__bg {
@@ -30,6 +40,16 @@
         z-index: 1000;
         transition: transform .8s cubic-bezier(.86,0,.07,1);
         // transform: scale(50);
+
+        @include respond(tab-port){
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+
+        @include respond(phone){
+            top: 3.5rem;
+            right: 3.5rem;
+        }
     }
 
     &__nav {
