@@ -51,12 +51,14 @@ body{
     font-weight: 700;
     background-image: linear-gradient(to right,$color-primary-light,$color-primary-dark);
     display: inline-block;
-    -webkit-background-clip:text;
-    background-clip: text;
     color: transparent;
     letter-spacing: 2px;
     transition: all .2s;
 
+    @supports(-webkit-background-clip:text or (background-clip: text)){
+        -webkit-background-clip:text;
+        background-clip: text;
+    }
     @include respond(tab-port) {
         font-size: 3rem;
     }
