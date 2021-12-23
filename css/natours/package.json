@@ -1,5 +1,5 @@
 {
-  "name": "css",
+  "name": "natours",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "build:sass": "npm-run-all compile:sass concat:css prefix:css compress:sass"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tejinder",
   "license": "ISC",
   "devDependencies": {
     "concat": "^1.0.3",
